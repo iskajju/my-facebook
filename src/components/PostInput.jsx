@@ -124,7 +124,7 @@ export const PostInput = () => {
                             <>
                                 <label for='selcfile' className='bg-gray-500/20 rounded-full h-[40px] w-[40px] flex  items-center justify-center cursor-cell ' onClick={imageaddoption}>
 
-                                    <img src="addimgicon.png" alt="" />
+                                    <img className='h-[20px] w-[20px] md:h-[30px] md:w-[30px]  object-contain '  src="addimgicon.png" alt="" />
                                     <input ref={filepickerRef} onChange={addimagetopost} type="file" name="" id="selcfile" hidden />
                                 </label>
                                 <p className=' m-[5px] text-gray-500  text-sm font-semibold '>Add photos </p>
@@ -134,7 +134,7 @@ export const PostInput = () => {
 
                         {imagetopost &&
                             <label for='selcfile' className='absolute top-[15px] left-[15px] px-[5px] py-0 shadow-lg   bg-white rounded-md  h-[40px] flex items-center justify-center cursor-cell hover:scale-[102%]  ' onClick={imageaddoption}>
-                                <img className='h-[20px]  object-fill ' src="addimgicon.png" alt="" />
+                                <img className='h-[20px] w-[20px]  object-contain ' src="addimgicon.png" alt="" />
                                 <input ref={filepickerRef} onChange={addimagetopost} type="file" name="" id="selcfile" hidden />
                                 <p className=' p-[2px] ml-[3px] text-xs font-bold ' >Add photos </p>
                             </label>}

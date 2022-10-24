@@ -11,17 +11,17 @@ import { Stories } from './Stories'
 
 export const Feed = () => {
   const user = useSelector(selectUser)
-  const [story,setStory] = useState([])
-  useEffect(()=> {
-    db.collection("stories").orderBy("timestamp","desc").onSnapshot(snapshot=>{
-      setStory(
-        snapshot.docs.map((doc)=>({
-          id:doc.id,
-          data:doc.data(),
-        }))
-      )
-    })
-  },[]);
+  // useEffect(()=> {
+  //   db.collection("stories").orderBy("timestamp","desc").onSnapshot(snapshot=>{
+  //     setStory(
+  //       snapshot.docs.map((doc)=>({
+  //         id:doc.id,
+  //         data:doc.data(),
+  //       }))
+  //       )
+  //     })
+  //   },[]);
+  // const [story,setStory] = useState([])
   const [posts, setPosts] = useState([])
   useEffect(() => {
     db.collection("posts")
@@ -50,13 +50,13 @@ export const Feed = () => {
         <Stories icon={user?.photo} story />
 
         {/* freind storiess section */}
-        {story.map(({id,data:{name,story}})=>(
+        {/* {story.map(({id,data:{name,story}})=>(
           <FreindStories
           key={id}
           icon={name}
           bgstory={story}
            />
-        ))}
+        ))} */}
         <FreindStories icon={user?.photo} bgstory="https://assets.vogue.in/photos/6239a88deb60bae3c5bc6821/2:3/w_2560%2Cc_limit/Dubai.jpg" />
           <FreindStories icon="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2022/07/09/virat-kohli-ians-1125240-1657384748.png?itok=NtGcIUs4" bgstory="https://www.cricket.com.au/~/media/News/2022/10/23KohliCelebrates.ashx?la=en&hash=C2C18E3EA795C23E538D2914989C1A23E24456CB" />
           <FreindStories icon="https://imageio.forbes.com/specials-images/imageserve/627bd291633f3fbbcda36428/0x0.jpg?format=jpg&crop=2057,2059,x918,y85,safe&height=416&width=416&fit=bounds" bgstory="ronaldo.jfif" />
