@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+    
+    .headerCenterButton{
+        @apply flex items-center justify-center w-[16%!important] h-[50px!important] rounded-md hover:bg-[#606770]/10 text-gray-500 hover:text-blue-500
+    }
+    .rightIcon{
+        @apply flex items-center justify-center rounded-full  bg-[#606770]/10 text-black h-[40px!important] w-[40px!important] hover:bg-[#c2bbbb]/40
+    }
+    .hovert {
+        @apply transition-all duration-200 ease-in-out
+    }
+    .bgcomment{
+        @apply bg-[#F0F2F5]
+    }
+    .textcomment{
+        @apply text-[#606770]
+    }
+    .signupinput{
+        @apply bg-[#F0F2F5]/80  outline-none text-black placeholder:text-gray-400 text-justify border border-gray-300 rounded-md h-[40px] p-[10px] w-full
+    } 
+    .hide{
+        @apply hidden
+    }
+    .show{
+        @apply inline-block
+    }
+}
+@layer utilities {
+    .scrollbar-medium::-webkit-scrollbar {
+    @apply w-[8px] 
+    }
+    
+  }
